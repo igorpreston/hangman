@@ -1,0 +1,38 @@
+.game__hanged-man__folk__legs__leg {
+  position: absolute;
+  top: 0;
+  width: 22.5px;
+  height: 100%;
+}
+
+.game__hanged-man__folk__legs__leg--left {
+  left: 49px;
+}
+
+.game__hanged-man__folk__legs__leg--left__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(60, 90, 146, 1);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transform: rotate(15deg);
+}
+
+.game__hanged-man__folk__legs__leg--right {
+  right: 49px;
+}
+
+.game__hanged-man__folk__legs__leg--right__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(60, 90, 146, 1);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transform: rotate(-15deg);
+}

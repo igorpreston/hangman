@@ -1,0 +1,28 @@
+%letter-bar {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 0 2px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game__word-letter-list__letter-bar--inactive {
+  @extend %letter-bar;
+  background: rgba(230, 230, 231, 1);
+}
+
+.game__word-letter-list__letter-bar--active {
+  @extend %letter-bar;
+  background: rgba(83, 85, 93, 1);
+}
+
+.game__word-letter-list__letter-bar__typography {
+  font-family: 'Aller Display';
+  font-size: 40px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  user-select: none;
+}

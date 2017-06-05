@@ -1,0 +1,1 @@
+export const FOLK_HANGED = 'FOLK/FOLK_HANGED';

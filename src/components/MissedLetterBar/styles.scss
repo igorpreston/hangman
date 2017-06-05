@@ -1,0 +1,17 @@
+.game__missed-letters__list__letter-bar {
+  position: relative;
+  width: 40px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game__missed-letters__list__letter-bar__typography {
+  position: relative;
+  font-family: 'Aller Display';
+  font-size: 40px;
+  color: rgba(77, 105, 250, 1);
+  text-transform: uppercase;
+  user-select: none;
+}
