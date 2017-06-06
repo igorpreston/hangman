@@ -1,10 +1,12 @@
 import * as types from '../actionTypes/game';
-import { getDoesTheWordHaveLetter } from '../reducers/word';
+import { getDoesTheWordHaveLetter, getWordLength } from '../reducers/word';
 import { getIsTheMissingLetterDuplicated, getAreAllLettersGuessed } from '../reducers/game';
 import { fetchWord } from './word';
 import { hangTheFolk } from './folk';
 
 export const guessLetter = letter => (dispatch, getState) => {
+  const wordLength = getWordLength(getState());
+  if (wordLength <= 0) return;
   const parsedLetter = letter.toLowerCase();
   const wordHasLetter = getDoesTheWordHaveLetter(getState(), parsedLetter);
 
