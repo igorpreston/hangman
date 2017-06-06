@@ -8,8 +8,8 @@ const LetterBar = ({ active, children }) => (
     className={classNames({
       'game__word-letter-list__letter-bar--active': active,
       'game__word-letter-list__letter-bar--inactive': !active,
-      'animated': active,
-      'bounceIn': active,
+      animated: active,
+      bounceIn: active,
     })}
   >
     {children ?

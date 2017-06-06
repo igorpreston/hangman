@@ -7,7 +7,7 @@ const WordLetterList = ({ guessedLetters }) => (
     {guessedLetters && guessedLetters.map((letter, i) =>
       <LetterBar
         key={i}
-        active={!letter.placeholder || letter.guessed}
+        active={letter.guessed || !letter.placeholder}
       >
         {letter.guessed ? letter.name : null}
       </LetterBar>

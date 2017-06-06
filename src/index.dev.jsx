@@ -12,11 +12,11 @@ export const store = configureStore({});
 
 store.dispatch(fetchWord());
 
-function renderClient (NextRoot, store) {
+function renderClient (NextRoot, nextStore) {
   return render(
     <AppContainer>
       <NextRoot
-        store={store}
+        store={nextStore}
       />
     </AppContainer>,
     docRoot,

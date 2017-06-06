@@ -5,13 +5,13 @@ import './styles';
 
 const MissedLettersList = ({ missedLetters }) => (
   <div className="game__missed-letters__list">
-    {missedLetters && missedLetters.map(letter =>
+    {missedLetters && missedLetters.map(letter => (
       <MissedLetterBar
         key={letter}
       >
         {letter}
       </MissedLetterBar>
-    )}
+    ))}
   </div>
 );
 

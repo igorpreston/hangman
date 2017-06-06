@@ -5,7 +5,7 @@ import rootReducer from '../reducers';
 import DevTools from '../components/DevTools';
 
 const enhancer = compose(
-  applyMiddleware(thunk),
+	applyMiddleware(thunk),
 	DevTools.instrument(),
 );
 

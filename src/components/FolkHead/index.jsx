@@ -3,7 +3,11 @@ import head from './head.png';
 import './styles';
 
 const FolkHead = () => (
-  <img src={head} className="game__hanged-man__folk__head animated bounceIn" />
+  <img 
+    src={head} 
+    className="game__hanged-man__folk__head animated bounceIn"
+    alt="folk head"
+  />
 );
 
 export default FolkHead;
