@@ -1,6 +1,9 @@
 import * as types from '../actionTypes/word';
 
 export const fetchWord = () => dispatch => {
+  // if api fails to respond, use placeholder word for the game
+  const placeholderWord = 'hangman';
+
   dispatch(fetchWordRequest());
   fetch(
     `http://api.wordnik.com/v4/words.json/randomWord?hasDictionaryDef=false&minCorpusCount=0&maxCorpusCount=10&minDictionaryCount=1&maxDictionaryCount=11&minLength=5&maxLength=11&api_key=${process.env.WORDNIK_API_KEY}`
@@ -9,12 +12,11 @@ export const fetchWord = () => dispatch => {
     if (response.ok) {
       return response.json();
     }
-    dispatch(fetchWordFailure());
+    dispatch(fetchWordFailure(placeholderWord));
   })
   .then(data => dispatch(fetchWordSuccess(data.word)))
   .catch(error => {
-    console.log(error);
-    dispatch(fetchWordFailure());
+    dispatch(fetchWordFailure(placeholderWord));
   });
 };
 
@@ -27,6 +29,7 @@ export const fetchWordSuccess = word => ({
   payload: { word },
 });
 
-export const fetchWordFailure = () => ({
+export const fetchWordFailure = word => ({
   type: types.FETCH_WORD_FAILURE,
+  payload: { word }
 });
