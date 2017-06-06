@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import './styles';
+import classNames from 'classnames/bind';
+import styles from './styles';
 
 const FolkArm = ({ side }) => (
   <div
-    className={classNames({
-      'game__hanged-man__folk__arms__arm--left': side === 'left',
-      'game__hanged-man__folk__arms__arm--right': side === 'right',
-      'animated': true,
-      'bounceIn': true,
+    className={classNames.bind(styles)({
+      leftArm: side === 'left',
+      rightArm: side === 'right',
     })}
   >
     <div 
-      className={classNames({
-        'game__hanged-man__folk__arms__arm--left__bg': side === 'left',
-        'game__hanged-man__folk__arms__arm--right__bg': side === 'right',
+      className={classNames.bind(styles)({
+        leftArmShape: side === 'left',
+        rightArmShape: side === 'right',
       })}
     />
   </div>

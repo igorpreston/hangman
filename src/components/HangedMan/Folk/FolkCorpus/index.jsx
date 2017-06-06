@@ -1,18 +1,30 @@
 import React from 'react';
-import classNames from 'classnames';
-import './styles';
+import classNames from 'classnames/bind';
+import styles from './styles';
 
 const FolkCorpus = () => (
   <div
-    className={classNames({
-      'game__hanged-man__folk__corpus': true,
-      'animated': true,
-      'bounceIn': true,
+    className={classNames.bind(styles)({
+      corpus: true,
+      animated: true,
+      bounceIn: true,
     })}
   >
-    <div className="game__hanged-man__folk__corpus__part--left" />
-    <div className="game__hanged-man__folk__corpus__part--right" />
-    <div className="game__hanged-man__folk__corpus__part--bottom" />
+    <div 
+      className={classNames.bind(styles)({
+        corpusLeft: true,
+      })}  
+    />
+    <div 
+      className={classNames.bind(styles)({
+        corpusRight: true,
+      })}  
+    />
+    <div 
+      className={classNames.bind(styles)({
+        corpusBottom: true,
+      })}  
+    />
   </div>
 );
 

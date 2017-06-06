@@ -80,6 +80,8 @@ module.exports = {
           {
             loader: require.resolve('css-loader'),
             options: {
+              modules: true,
+              camelCase: true,
               sourceMap: true,
               importLoaders: 2,
             },

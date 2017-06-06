@@ -1,8 +1,13 @@
 import React from 'react';
-import './styles';
+import classNames from 'classnames/bind';
+import styles from './styles';
 
 const GameOverScreenTitle = () => (
-  <h1 className="game__game-over-screen__title">
+  <h1
+    className={classNames.bind(styles)({
+      title: true,
+    })}
+  >
     Game Over
   </h1>
 );

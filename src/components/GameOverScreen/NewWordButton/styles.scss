@@ -1,15 +1,15 @@
-.game__game-over-screen__new-word {
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.button {
+  @include small-thin-letter-font;
   position: relative;
-  font-family: 'Aller Display';
-  font-weight: 200;
-  font-size: 14px;
-  text-transform: uppercase;
   margin-top: 10px;
   padding: 10px 25px;
   background: transparent;
   letter-spacing: 1px;
-  color: rgba(255, 186, 0, 1);
-  border: 2px dashed rgba(255, 186, 0, 1);
+  color: $bright-orange;
+  border: 2px dashed $bright-orange;
   border-radius: 50px;
   cursor: pointer;
   outline: none;

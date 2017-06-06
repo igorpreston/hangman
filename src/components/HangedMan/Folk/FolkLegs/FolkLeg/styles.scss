@@ -1,35 +1,42 @@
-.game__hanged-man__folk__legs__leg--left,
-.game__hanged-man__folk__legs__leg--right {
+@import '../../../../../styles/animations';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/shapes';
+
+%leg {
+  @include animated;
+  @include bounce-in;
   position: absolute;
   top: 0;
   width: 22.5px;
   height: 100%;
 }
 
-.game__hanged-man__folk__legs__leg--left {
-  left: 49px;
-}
-
-.game__hanged-man__folk__legs__leg--right {
-  right: 49px;
-}
-
-.game__hanged-man__folk__legs__leg--left__bg,
-.game__hanged-man__folk__legs__leg--right__bg {
+%shape {
+  @include bottom-radius;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(60, 90, 146, 1);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  background: $light-blue;
 }
 
-.game__hanged-man__folk__legs__leg--left__bg {
+.left-leg {
+  @extend %leg;
+  left: 49px;
+}
+
+.right-leg {
+  @extend %leg;
+  right: 49px;
+}
+
+.left-leg-shape {
+  @extend %shape;
   transform: rotate(15deg);
 }
 
-.game__hanged-man__folk__legs__leg--right__bg {
+.right-leg-shape {
+  @extend %shape;
   transform: rotate(-15deg);
 }

@@ -1,4 +1,10 @@
-.game__missed-letters__list__letter-bar {
+@import '../../../styles/animations';
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.bar {
+  @include animated;
+  @include bounce-in;
   position: relative;
   width: 40px;
   height: 50px;
@@ -7,11 +13,8 @@
   justify-content: center;
 }
 
-.game__missed-letters__list__letter-bar__typography {
+.text {
+  @include letter-font;
   position: relative;
-  font-family: 'Aller Display';
-  font-size: 40px;
-  color: rgba(77, 105, 250, 1);
-  text-transform: uppercase;
-  user-select: none;
+  color: $bright-blue;
 }

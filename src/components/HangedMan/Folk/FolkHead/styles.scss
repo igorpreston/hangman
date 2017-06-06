@@ -1,4 +1,8 @@
-.game__hanged-man__folk__head {
+@import '../../../../styles/animations';
+
+.head {
+  @include animated;
+  @include bounce-in;
   width: 100px;
   z-index: 2;
 }

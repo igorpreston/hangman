@@ -1,8 +1,19 @@
 import React from 'react';
-import './styles';
+import classNames from 'classnames/bind';
+import styles from './styles';
 
 const TriangleLabel = () => (
-  <div className="game__triangle-label" />
+  <div
+    className={classNames.bind(styles)({
+      triangle: true,
+    })}
+  >
+    <div
+      className={classNames.bind(styles)({
+        shape: true,
+      })}
+    />
+  </div>
 );
 
 export default TriangleLabel;

@@ -1,13 +1,11 @@
 import React from 'react';
-import classNames from 'classnames';
-import './styles';
+import classNames from 'classnames/bind';
+import styles from './styles';
 
 const FolkNeck = () => (
   <div 
-    className={classNames({
-      'game__hanged-man__folk__neck': true,
-      'animated': true,
-      'bounceIn': true,
+    className={classNames.bind(styles)({
+      neck: true,
     })}
   />
 );

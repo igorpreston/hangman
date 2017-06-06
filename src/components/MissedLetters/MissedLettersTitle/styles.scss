@@ -1,9 +1,9 @@
-.game__missed-letters__title {
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+.title {
+  @include small-thin-letter-font;
   position: relative;
-  font-family: 'Aller Display';
-  font-weight: 200;
-  font-size: 14px;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  color: rgba(83, 85, 93, 1);
+  color: $flat-blue;
 }

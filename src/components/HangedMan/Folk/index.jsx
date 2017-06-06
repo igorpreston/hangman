@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import FolkHead from './FolkHead';
 import FolkNeck from './FolkNeck';
 import FolkCorpus from './FolkCorpus';
@@ -10,11 +11,15 @@ import FolkLegs from './FolkLegs';
 import FolkLeg from './FolkLegs/FolkLeg';
 import FolkFeet from './FolkFeet';
 import FolkFoot from './FolkFeet/FolkFoot';
-import './styles';
+import styles from './styles';
 
 const Folk = ({ hanged }) => {
   return (
-    <div className="game__hanged-man__folk">
+    <div
+      className={classNames.bind(styles)({
+        folk: true,
+      })}
+    >
       {hanged.includes('head') ?
         <FolkHead />
       : null}

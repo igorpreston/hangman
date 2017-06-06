@@ -1,36 +1,43 @@
-.game__hanged-man__folk__arms__arm--left,
-.game__hanged-man__folk__arms__arm--right {
+@import '../../../../../styles/animations';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/shapes';
+
+%arm {
+  @include animated;
+  @include bounce-in;
   position: absolute;
   top: 0;
   width: 20px;
   height: 70px;
 }
 
-.game__hanged-man__folk__arms__arm--left {
-  left: 76px;
-}
-
-.game__hanged-man__folk__arms__arm--right {
-  right: 76px;
-}
-
-.game__hanged-man__folk__arms__arm--left__bg,
-.game__hanged-man__folk__arms__arm--right__bg {
+%shape {
+  @include bottom-radius;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 
-.game__hanged-man__folk__arms__arm--left__bg {
-  background: rgba(138, 198, 87, 1);
+.left-arm {
+  @extend %arm;
+  left: 76px;
+}
+
+.right-arm {
+  @extend %arm;
+  right: 76px;
+}
+
+.left-arm-shape {
+  @extend %shape;
+  background: $light-green;
   transform: rotate(40deg);
 }
 
-.game__hanged-man__folk__arms__arm--right__bg {
-  background: rgba(78, 160, 106, 1);
+.right-arm-shape {
+  @extend %shape;
+  background: $dark-green;
   transform: rotate(-40deg);
 }

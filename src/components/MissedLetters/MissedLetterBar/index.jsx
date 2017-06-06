@@ -1,9 +1,18 @@
 import React from 'react';
-import './styles';
+import classNames from 'classnames/bind';
+import styles from './styles';
 
 const MissedLetterBar = ({ children }) => (
-  <div className="game__missed-letters__list__letter-bar animated bounceIn">
-    <span className="game__missed-letters__list__letter-bar__typography">
+  <div
+    className={classNames.bind(styles)({
+      bar: true,
+    })}
+  >
+    <span
+      className={classNames.bind(styles)({
+        text: true,
+      })}
+    >
       {children}
     </span>
   </div>

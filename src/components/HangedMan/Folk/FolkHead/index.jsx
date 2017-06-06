@@ -1,15 +1,13 @@
 import React from 'react';
-import classNames from 'classnames';
+import classNames from 'classnames/bind';
 import head from './head.png';
-import './styles';
+import styles from './styles';
 
 const FolkHead = () => (
   <img 
     src={head}
-    className={classNames({
-      'game__hanged-man__folk__head': true,
-      'animated': true,
-      'bounceIn': true,
+    className={classNames.bind(styles)({
+      head: true,
     })}
     role="presentation"
   />

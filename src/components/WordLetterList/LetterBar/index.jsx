@@ -1,19 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import './styles';
+import classNames from 'classnames/bind';
+import styles from './styles';
 
 const LetterBar = ({ active, children }) => (
   <div
-    className={classNames({
-      'game__word-letter-list__letter-bar--active': active,
-      'game__word-letter-list__letter-bar--inactive': !active,
-      animated: active,
-      bounceIn: active,
+    className={classNames.bind(styles)({
+      activeBar: active,
+      inactiveBar: !active,
     })}
   >
     {children ?
-      <span className="game__word-letter-list__letter-bar__typography animated bounceIn">
+      <span
+        className={classNames.bind(styles)({
+          text: true,
+          animated: true,
+          bounceIn: true,
+        })}
+      >
         {children}
       </span>
     : null}

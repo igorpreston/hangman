@@ -1,3 +1,7 @@
+@import '../../../styles/animations';
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
 %letter-bar {
   position: relative;
   width: 60px;
@@ -9,20 +13,21 @@
   justify-content: center;
 }
 
-.game__word-letter-list__letter-bar--inactive {
+.inactive-bar {
   @extend %letter-bar;
-  background: rgba(230, 230, 231, 1);
+  background: $transparent-gray;
 }
 
-.game__word-letter-list__letter-bar--active {
+.active-bar {
   @extend %letter-bar;
-  background: rgba(83, 85, 93, 1);
+  @include animated;
+  @include bounce-in;
+  background: $flat-blue;
 }
 
-.game__word-letter-list__letter-bar__typography {
-  font-family: 'Aller Display';
-  font-size: 40px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 1);
-  user-select: none;
+.text {
+  @include animated;
+  @include bounce-in;
+  @include letter-font;
+  color: rgb(255, 255, 255);
 }

@@ -1,19 +1,26 @@
-@import 'fonts';
-@import 'animations';
-
-html, body {
+%full-size {
   width: 100%;
   height: 100%;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+:global {
+  html, body {
+    @extend %full-size;
+  }
 
-#docroot {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #docroot {
+    @extend %full-size;
+    position: relative;
+  }
+
+  @font-face {
+    font-family: 'Aller Display';
+    src: url('../fonts/AllerDisplay.ttf');
+  }
 }

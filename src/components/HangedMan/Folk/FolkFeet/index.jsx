@@ -1,8 +1,13 @@
 import React from 'react';
-import './styles';
+import classNames from 'classnames/bind';
+import styles from './styles';
 
 const FolkFeet = ({ children }) => (
-  <div className="game__hanged-man__folk__feet">
+  <div
+    className={classNames.bind(styles)({
+      feet: true,
+    })}
+  >
     {children}
   </div>
 );

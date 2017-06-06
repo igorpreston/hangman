@@ -1,0 +1,16 @@
+@mixin letter-font {
+  font-family: 'Aller Display';
+  font-size: 40px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+@mixin thin-letter-font {
+  @include letter-font;
+  font-weight: 200;
+}
+
+@mixin small-thin-letter-font {
+  @include thin-letter-font;
+  font-size: 14px;
+}

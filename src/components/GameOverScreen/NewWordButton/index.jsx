@@ -1,10 +1,13 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import './styles';
+import styles from './styles';
 
 const NewWordButton = ({ onClick }) => (
   <button 
-    className="game__game-over-screen__new-word" 
+    className={classNames.bind(styles)({
+      button: true,
+    })} 
     onClick={onClick}
   >
     New Word

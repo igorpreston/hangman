@@ -1,10 +1,15 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import MissedLetterBar from '../MissedLetterBar';
-import './styles';
+import styles from './styles';
 
 const MissedLettersList = ({ missedLetters }) => (
-  <div className="game__missed-letters__list">
+  <div
+    className={classNames.bind(styles)({
+      list: true,
+    })}
+  >
     {missedLetters && missedLetters.map(letter => (
       <MissedLetterBar
         key={letter}

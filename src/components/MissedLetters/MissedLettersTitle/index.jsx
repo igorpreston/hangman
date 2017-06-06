@@ -1,8 +1,13 @@
 import React from 'react';
-import './styles';
+import classNames from 'classnames/bind';
+import styles from './styles';
 
 const MissedLettersTitle = () => (
-  <h1 className="game__missed-letters__title">
+  <h1
+    className={classNames.bind(styles)({
+      title: true,
+    })}
+  >
     You missed:
   </h1>
 );
