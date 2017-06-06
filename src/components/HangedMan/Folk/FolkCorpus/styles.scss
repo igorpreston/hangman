@@ -8,7 +8,9 @@
   flex-flow: row wrap;
 }
 
-.game__hanged-man__folk__corpus__part {
+.game__hanged-man__folk__corpus__part--left,
+.game__hanged-man__folk__corpus__part--right,
+.game__hanged-man__folk__corpus__part--bottom {
   position: relative;
   width: 50%;
   height: 65px;

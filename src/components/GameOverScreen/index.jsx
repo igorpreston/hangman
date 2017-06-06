@@ -1,5 +1,5 @@
 import React from 'react';
-import GameOverScreenTitle from '../GameOverScreenTitle';
+import GameOverScreenTitle from './GameOverScreenTitle';
 import NewWordButton from '../../containers/NewWordButton';
 import './styles';
 

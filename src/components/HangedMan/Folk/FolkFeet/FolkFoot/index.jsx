@@ -6,7 +6,6 @@ import './styles';
 const FolkFoot = ({ side }) => (
   <div
     className={classNames({
-      'game__hanged-man__folk__feet__foot': true,
       'game__hanged-man__folk__feet__foot--left': side === 'left',
       'game__hanged-man__folk__feet__foot--right': side === 'right',
       'animated': true,

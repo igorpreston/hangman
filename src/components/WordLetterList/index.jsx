@@ -1,5 +1,5 @@
 import React from 'react';
-import LetterBar from '../LetterBar';
+import LetterBar from './LetterBar';
 import './styles';
 
 const WordLetterList = ({ guessedLetters }) => (

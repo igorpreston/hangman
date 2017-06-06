@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getHangedBodyParts } from '../../reducers/folk';
-import Folk from '../../components/Folk';
+import Folk from '../../components/HangedMan/Folk';
 
 const mapStateToProps = state => ({
   hanged: getHangedBodyParts(state),

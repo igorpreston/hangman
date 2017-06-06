@@ -1,15 +1,15 @@
 import React from 'react';
-import FolkHead from '../FolkHead';
-import FolkNeck from '../FolkNeck';
-import FolkCorpus from '../FolkCorpus';
-import FolkArms from '../FolkArms';
-import FolkArm from '../FolkArms/FolkArm';
-import FolkHands from '../FolkHands';
-import FolkHand from '../FolkHands/FolkHand';
-import FolkLegs from '../FolkLegs';
-import FolkLeg from '../FolkLegs/FolkLeg';
-import FolkFeet from '../FolkFeet';
-import FolkFoot from '../FolkFeet/FolkFoot';
+import FolkHead from './FolkHead';
+import FolkNeck from './FolkNeck';
+import FolkCorpus from './FolkCorpus';
+import FolkArms from './FolkArms';
+import FolkArm from './FolkArms/FolkArm';
+import FolkHands from './FolkHands';
+import FolkHand from './FolkHands/FolkHand';
+import FolkLegs from './FolkLegs';
+import FolkLeg from './FolkLegs/FolkLeg';
+import FolkFeet from './FolkFeet';
+import FolkFoot from './FolkFeet/FolkFoot';
 import './styles';
 
 const Folk = ({ hanged }) => {

@@ -1,22 +1,7 @@
-html, body {
-  width: 100%;
-  height: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-#docroot, 
 .root {
   position: relative;
   width: 100%;
   height: 100%;
-}
-
-.root {
   background: rgba(59, 65, 99, 1);
   display: flex;
   align-items: center;

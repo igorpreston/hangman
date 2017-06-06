@@ -1,4 +1,5 @@
-.game__hanged-man__folk__feet__foot {
+.game__hanged-man__folk__feet__foot--left,
+.game__hanged-man__folk__feet__foot--right {
   position: absolute;
   top: 0;
   width: 40px;
@@ -9,21 +10,11 @@
   left: 60px;
 }
 
-.game__hanged-man__folk__feet__foot--left__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(254, 206, 138, 1);
-  border-radius: 5px;
-  transform: rotate(7deg);
-}
-
 .game__hanged-man__folk__feet__foot--right {
   right: 60px;
 }
 
+.game__hanged-man__folk__feet__foot--left__bg,
 .game__hanged-man__folk__feet__foot--right__bg {
   position: absolute;
   top: 0;
@@ -32,5 +23,12 @@
   height: 100%;
   background: rgba(254, 206, 138, 1);
   border-radius: 5px;
+}
+
+.game__hanged-man__folk__feet__foot--left__bg {
+  transform: rotate(7deg);
+}
+
+.game__hanged-man__folk__feet__foot--right__bg {
   transform: rotate(-7deg);
 }

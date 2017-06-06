@@ -1,5 +1,5 @@
 import React from 'react';
-import Gallow from '../Gallow';
+import Gallow from './Gallow';
 import Folk from '../../containers/Folk';
 import './styles';
 

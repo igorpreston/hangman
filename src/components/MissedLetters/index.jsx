@@ -1,5 +1,5 @@
 import React from 'react';
-import MissedLettersTitle from '../MissedLettersTitle';
+import MissedLettersTitle from './MissedLettersTitle';
 import MissedLettersList from '../../containers/MissedLettersList';
 import './styles';
 
