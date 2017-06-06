@@ -3,6 +3,11 @@
   height: 100%;
 }
 
+@font-face {
+  font-family: 'Aller Display';
+  src: url('../fonts/AllerDisplay.ttf');
+}
+
 :global {
   html, body {
     @extend %full-size;
@@ -17,10 +22,5 @@
   #docroot {
     @extend %full-size;
     position: relative;
-  }
-
-  @font-face {
-    font-family: 'Aller Display';
-    src: url('../fonts/AllerDisplay.ttf');
   }
 }
