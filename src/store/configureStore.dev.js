@@ -5,18 +5,16 @@ import rootReducer from '../reducers';
 import DevTools from '../components/DevTools';
 
 const enhancer = compose(
-	applyMiddleware(thunk),
-	DevTools.instrument(),
+  applyMiddleware(thunk),
+  DevTools.instrument(),
 );
 
 export default function configureStore (initialState) {
 	const store = createStore(rootReducer, fromJS(initialState), enhancer);
 
-	if (module.hot) {
-		module.hot.accept('../reducers', () => {
-			return store.replaceReducer(rootReducer);
-		});
-	}
+  if (module.hot) {
+    module.hot.accept('../reducers', () => store.replaceReducer(rootReducer));
+  }
 
-	return store;
+  return store;
 };
