@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
@@ -125,7 +126,11 @@ module.exports = {
       allChunks: true,
     }),
     new CaseSensitivePathsPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new ImageminPlugin({
+      pngquant: {
+        quality: '95-100'
+      },
+    }),
   ],
 };
