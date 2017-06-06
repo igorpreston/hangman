@@ -2,9 +2,12 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const srcPath = resolve(__dirname, 'src');
 const distPath = resolve(__dirname, 'dist');
+const dotEnvPath = resolve(__dirname, '.env');
+const publicPath = '/';
 
 module.exports = {
   entry: [
@@ -18,7 +21,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: distPath,
-    publicPath: '/',
+    publicPath,
   },
 
   context: srcPath,
@@ -111,6 +114,9 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
       },
+    }),
+    new Dotenv({
+      path: dotEnvPath,
     }),
     new HtmlWebpackPlugin({
       template: resolve(srcPath, 'index.html'),
