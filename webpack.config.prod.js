@@ -1,49 +1,33 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
+const CleanPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 const srcPath = resolve(__dirname, 'src');
 const distPath = resolve(__dirname, 'dist');
 const dotEnvPath = resolve(__dirname, '.env');
-const publicPath = '/';
+const publicPath = '';
 
 module.exports = {
   entry: [
     require.resolve('whatwg-fetch'),
     require.resolve('object-assign'),
-    require.resolve('react-hot-loader/patch'),
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
     resolve(srcPath, 'index.js'),
   ],
 
   output: {
     filename: '[name].bundle.js',
+    chunkFilename: '[name].chunk.js',
     path: distPath,
     publicPath,
   },
 
   context: srcPath,
 
-  devtool: 'inline-source-map',
-
-  devServer: {
-    historyApiFallback: true,
-    hot: true,
-    contentBase: distPath,
-    publicPath: '/',
-    stats: {
-      assets: false,
-      colors: true,
-      version: false,
-      hash: false,
-      timings: false,
-      chunks: false,
-      chunkModules: false,
-    },
-  },
+  devtool: 'source-map',
 
   module: {
     rules: [
@@ -74,32 +58,33 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: require.resolve('style-loader'),
-          },
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              modules: true,
-              camelCase: true,
-              sourceMap: true,
-              importLoaders: 2,
+        use: ExtractTextPlugin.extract({
+          fallback: require.resolve('style-loader'),
+          use: [
+            {
+              loader: require.resolve('css-loader'),
+              options: {
+                modules: true,
+                camelCase: true,
+                sourceMap: true,
+                importLoaders: 2,
+                minimize: true,
+              },
             },
-          },
-          {
-            loader: require.resolve('postcss-loader'),
-            options: {
-              sourceMap: true,
+            {
+              loader: require.resolve('postcss-loader'),
+              options: {
+                sourceMap: true,
+              },
             },
-          },
-          {
-            loader: require.resolve('sass-loader'),
-            options: {
-              sourceMap: true,
+            {
+              loader: require.resolve('sass-loader'),
+              options: {
+                sourceMap: true,
+              },
             },
-          },
-        ],
+          ],
+        }),
       },
     ],
   },
@@ -113,9 +98,12 @@ module.exports = {
   },
 
   plugins: [
+    new CleanPlugin([
+      distPath,
+    ]),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development'),
+        NODE_ENV: JSON.stringify('production'),
       },
     }),
     new Dotenv({
@@ -124,6 +112,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve(srcPath, 'index.html'),
       xhtml: true,
+      hash: true,
+      inject: true,
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+    }),
+    new ExtractTextPlugin({
+      filename: '[name].[contenthash].css',
+      allChunks: true,
     }),
     new CaseSensitivePathsPlugin(),
     new webpack.HotModuleReplacementPlugin(),

@@ -3,7 +3,12 @@
     ["es2015", { "modules": false }],
     "react"
   ],
-  "plugins": [
-    "react-hot-loader/babel"
-  ]
+  "env": {
+    "production": {
+      "plugins": ["transform-runtime"]
+    },
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    }
+  }
 }
