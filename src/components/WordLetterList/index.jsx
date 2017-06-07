@@ -1,4 +1,5 @@
 import React from 'react';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import classNames from 'classnames/bind';
 import LetterBar from './LetterBar';
 import styles from './styles';
@@ -19,5 +20,9 @@ const WordLetterList = ({ guessedLetters }) => (
     )}
   </div>
 );
+
+WordLetterList.propTypes = {
+  guessedLetters: ImmutablePropTypes.list,
+};
 
 export default WordLetterList;

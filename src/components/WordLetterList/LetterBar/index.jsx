@@ -26,10 +26,12 @@ const LetterBar = ({ active, children }) => (
 
 LetterBar.propTypes = {
   active: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 LetterBar.defaultProps = {
   active: false,
+  children: null,
 };
 
 export default LetterBar;

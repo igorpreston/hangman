@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import GameOverScreenTitle from './GameOverScreenTitle';
 import NewWordButton from '../../containers/NewWordButton';
@@ -14,5 +15,9 @@ const GameOverScreen = ({ isPlaying }) => !isPlaying ? (
     <NewWordButton />
   </div>
 ) : null;
+
+GameOverScreen.propTypes = {
+  isPlaying: PropTypes.bool.isRequired,
+};
 
 export default GameOverScreen;

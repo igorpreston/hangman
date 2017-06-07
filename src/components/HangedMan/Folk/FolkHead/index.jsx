@@ -8,7 +8,7 @@ import styles from './styles';
 const FolkHead = () => (
   <img 
     src={head}
-    srcset={`${head} 1x, ${head2x} 2x, ${head3x} 3x`}
+    srcSet={`${head} 1x, ${head2x} 2x, ${head3x} 3x`}
     className={classNames.bind(styles)({
       head: true,
     })}
