@@ -1,6 +1,13 @@
 # Hangman
 This is a simple hangman game web app. You can play it at: [netguru-hangman.surge.sh](http://netguru-hangman.surge.sh).
 
+## Tech Stack
+1. React.
+2. Redux / Redux-Thunk.
+3. Fetch.
+4. Immutable.js.
+5. Reselect.js.
+
 ## How to run
 1. `git clone`
 2. Create .env file and provide `WORDNIK_API_KEY=INSERT_YOUR_KEY_HERE` for the app to fetch random word for the game. Otherwise, default placeholder word `hangman` will be used.
@@ -13,3 +20,5 @@ This is a simple hangman game web app. You can play it at: [netguru-hangman.surg
 
 ## Credits
 Kudos to guys at [@netguru](https://github.com/netguru) for creating design, graphics and concept.
+
+Code by [@igorpreston](https://github.com/igorpreston).
